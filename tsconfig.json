@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": false,
+    "noImplicitAny": false,
+    "declaration": true,
+    "strictNullChecks": true,
+    "noImplicitThis": true,
+    "noImplicitReturns": true,
+    "noUnusedParameters": false,
+    "noUnusedLocals": false,
+    "allowJs": false,
+    "outDir": "./compiled",
+    "target": "es6",
+    "module": "commonjs",
+    "moduleResolution": "Node",
+    "jsx": "react",
+    "lib": ["dom", "es2017", "dom.iterable", "scripthost"],
+    "typeRoots": ["./node_modules/@types"]
+  },
+  "exclude": [
+    "__snapshots__",
+    "build/",
+    "compiled/",
+    "coverage",
+    "dist/",
+    "node_modules/"
+  ],
+  "awesomeTypescriptLoaderOptions": {
+    "transpileOnly": true
+  }
+}
