@@ -38,10 +38,15 @@
     "webpack-merge": "^5.1.4",
     "webpack-node-externals": "^2.5.2"
   },
+  "dependencies": {
+    "cross-env": "^7.0.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
   "scripts": {
     "dev:webpack:main": "yarn cross-env NODE_ENV=development webpack --config ./webpack/main.config.ts",
     "dev:webpack:server": "yarn cross-env NODE_ENV=development webpack-dev-server --config ./webpack/renderer.config.ts --hot",
-    "dev:electron": "concurrently \"yarn dev:webpack:main\"  \"electron ./build/debug/main.js\"",
+    "dev:electron": "yarn dev:webpack:main && yarn electron ./build/debug/main.js",
     "dev": "concurrently \"yarn dev:electron\" \"yarn dev:webpack:server\"",
     "build": "concurrently \"yarn cross-env NODE_ENV=production webpack --config ./webpack/main.config.ts\" \"yarn cross-env NODE_ENV=production webpack --config ./webpack/renderer.config.ts\"",
     "start": "yarn build && electron ./build/dist/main.js"

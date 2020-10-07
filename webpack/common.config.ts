@@ -1,4 +1,4 @@
-import webpack from 'webpack';
+import * as webpack from 'webpack';
 
 const isProd = process.env.NODE_ENV === 'production';
 
